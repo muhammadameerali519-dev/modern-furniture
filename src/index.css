@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Custom visual utilities */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Scrollbar customizations */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F9F7F5; /* brand-cream */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e5e5e5; /* stone-200 */
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37; /* brand-gold */
+}
+
+/* Utilitarian line clamp truncating */
+.truncate-3-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   PREMIUM LUXURY UI/UX DESIGN STYLES (Apple-inspired shine & Walnut accents)
+   ========================================================================== */
+
+/* Keyframe Animations */
+@keyframes premium-shine {
+  0% {
+    left: -150%;
+  }
+  50% {
+    left: 150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(0.5deg);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoom-slow {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes hover-gold-glow {
+  0%, 100% {
+    box-shadow: 0 4px 20px -2px rgba(212, 175, 55, 0.15);
+  }
+  50% {
+    box-shadow: 0 10px 30px 2px rgba(212, 175, 55, 0.35);
+  }
+}
+
+/* Animation Utility Classes */
+.animate-fade-in-up {
+  animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.animate-float-subtle {
+  animation: float-subtle 4s ease-in-out infinite;
+}
+
+.animate-zoom-slow {
+  animation: zoom-slow 20s ease-in-out infinite;
+}
+
+/* Apple-Inspired Shine Sweep Effect */
+.apple-shine-sweep {
+  position: relative;
+  overflow: hidden;
+}
+
+.apple-shine-sweep::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 35%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0.25) 65%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.apple-shine-sweep:hover::after {
+  animation: premium-shine 1.4s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+/* Active sweep that runs periodically automatically */
+.apple-shine-sweep-active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 35%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.2) 65%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  animation: premium-shine 4s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+/* Glassmorphism Panel styles */
+.premium-glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.premium-glass-dark {
+  background: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Elegant walnut-wood visual gradients */
+.walnut-wood-gradient {
+  background: linear-gradient(135deg, #3E2723 0%, #1A0F0D 100%);
+}
+
+.gold-luxury-gradient {
+  background: linear-gradient(135deg, #DFBA49 0%, #C59B27 50%, #A37A17 100%);
+}
+
+/* Soft shadows with realistic depth */
+.premium-shadow-sm {
+  box-shadow: 0 2px 8px -1px rgba(0, 0, 0, 0.04), 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+}
+
+.premium-shadow-md {
+  box-shadow: 0 12px 24px -6px rgba(40, 30, 20, 0.06), 0 4px 12px -2px rgba(40, 30, 20, 0.03);
+}
+
+.premium-shadow-lg {
+  box-shadow: 0 20px 40px -10px rgba(40, 30, 20, 0.12), 0 8px 20px -4px rgba(40, 30, 20, 0.06);
+}
+
+.premium-shadow-xl {
+  box-shadow: 0 30px 60px -15px rgba(40, 30, 20, 0.2), 0 12px 30px -6px rgba(40, 30, 20, 0.1);
+}
+
+/* Micro interaction - Lift & Hover glows */
+.premium-hover-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 45px -12px rgba(40, 30, 20, 0.15), 0 10px 24px -6px rgba(40, 30, 20, 0.08);
+}
+
+.premium-gold-glow:hover {
+  animation: hover-gold-glow 2s ease-in-out infinite;
+}
+
+/* Glass-like subtle gloss overlay */
+.glass-shine-overlay {
+  position: relative;
+}
+
+.glass-shine-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 40%, rgba(0,0,0,0.05) 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Text luxury underline animation */
+.luxury-underline-effect {
+  position: relative;
+}
+
+.luxury-underline-effect::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #D4AF37;
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.luxury-underline-effect:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+

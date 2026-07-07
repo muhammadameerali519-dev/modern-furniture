@@ -1,0 +1,6 @@
+{
+  "name": "Modern Furniture",
+  "description": "Premium luxury furniture store in Gujranwala, Pakistan, offering handcrafted beds, luxury sofas, dining sets, executive office furniture, and bespoke wood designs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
